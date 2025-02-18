@@ -7,7 +7,7 @@ createServer(async (req, res) => {
   switch (req.url) {
     case '/': {
       const result = streamText({
-        model: openai('gpt-4o'),
+        model: openai('gpt-4'),
         prompt: 'Invent a new holiday and describe its traditions.',
       });
       result.pipeDataStreamToResponse(res);
@@ -21,7 +21,7 @@ createServer(async (req, res) => {
           dataStreamWriter.writeData('initialized call');
 
           const result = streamText({
-            model: openai('gpt-4o'),
+            model: openai('gpt-4'),
             prompt: 'Invent a new holiday and describe its traditions.',
           });
 
